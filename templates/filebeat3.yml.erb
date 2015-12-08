@@ -1,4 +1,5 @@
 ### Filebeat configuration managed by Puppet ###
+<%- @filebeat_config['filebeat']['spool_size'] = Integer(@filebeat_config['filebeat']['spool_size']) -%>
 <%= @filebeat_config.to_yaml.gsub(/---\n/,
   '---' => ''
 ) %>
